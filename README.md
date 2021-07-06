@@ -50,7 +50,7 @@ $ sudo snap install whatee
 
 
 ## Releases:
-:link:	 Check out [releases](https://github.com/heliherrera/whatee-app/releases/tag/1.0.0) for available packages.
+:link:	 Check out [releases](https://github.com/heliherrera/whatee/releases/tag/v1.0.0) for available packages.
 ___
 ## Source
 

@@ -1,0 +1,34 @@
+{
+  "name": "whatee",
+  "productName": "whatee",
+  "version": "1.0.0",
+  "description": "A simple non-official WhatsApp desktop client",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Electron Webview\"",
+    "create-installer-win": "node installers/windows/createinstaller.js",
+    "create-debian-installer": "electron-installer-debian --src release-builds/whatee-linux-x64/ --arch amd64 --config debian.json",
+    "dist": "electron-builder --linux snap",
+    "package-linux": "electron-packager .  whatee --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds",
+    "create-installer-mac": "electron-installer-dmg ./release-builds/Electron\\ webview-darwin-x64/Electron\\ webview.app electron-webview --out=release-builds --overwrite --icon=assets/icons/mac/icon.icns"
+  },
+  "repository": "https://github.com/heliherrera/whatte",
+  "keywords": [
+    "Whatsapp web",
+    "webview",
+    "unoficial",
+    "free"
+  ],
+  "author": "Heli Herrera",
+  "license": "MIT",
+  "dependencies": {
+    "@electron/remote": "^1.0.4"
+  },
+  "devDependencies": {
+    "electron": "^13.0.0",
+    "electron-builder": "^22.11.7",
+    "electron-installer-dmg": "^3.0.0"
+  }
+}
